@@ -226,7 +226,7 @@ class Server {
       $s = $this->row2lat($resultdata[0]['s'] - 1, $metadata['maxzoom']);
       $metadata['bounds'] = implode(',', [$w, $s, $e, $n]);
     }
-    $mbt = explode('.', $mbt);
+    $mbt = explode('.mbtiles', $mbt);
     $metadata['basename'] = $mbt[0];
     $metadata = $this->metadataValidation($metadata);
     return $metadata;
