@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  server:
+    image: tileserver
+    restart: always
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - ./maps:/var/www/html/maps
+    environment:
+      dataRoot : /var/www/html/maps/
+    ports:
+      - "80:80"
+      - "443:443"
