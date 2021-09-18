@@ -29,6 +29,7 @@ Router::serve([
     '/:alpha/:number/:number/:alpha' => 'Wmts:getTile',
     '/tms' => 'Tms:getCapabilities',
     '/tms/:alpha' => 'Tms:getLayerCapabilities',
+    '/styles/v1/mapbox/:alpha' => 'Json:getJson'
 ]);
 
 /**
@@ -228,6 +229,7 @@ class Server {
     }
     $mbt = explode('.mbtiles', $mbt);
     $metadata['basename'] = $mbt[0];
+    $metadata['id'] = $metadata['id'];
     $metadata = $this->metadataValidation($metadata);
     return $metadata;
   }
